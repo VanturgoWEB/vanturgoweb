@@ -3,11 +3,11 @@ import { createRoot } from 'react-dom/client'
 import Home from './Home.tsx'
 import './index.css'
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Home />,

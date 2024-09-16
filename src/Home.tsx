@@ -3,7 +3,9 @@ import Heading from "./components/Heading";
 import MovingText from "./components/MovingText";
 import Navbar from "./components/Navbar";
 import PrimaryButton from "./components/PrimaryButton";
-import placeholder from "./assets/placeholder.svg"
+import placeholder from "./assets/placeholder.svg";
+import Footer from "./components/Footer";
+import InputField from "./components/InputField";
 
 function Home() {
 	return (
@@ -84,7 +86,36 @@ function Home() {
 				</div>
 			</div>
 			<MovingText text="Ihre vertrauenswürdige Diesel-Tankstelle" />
-
+			<div className="px-16 py-28 space-x-12 flex justify-between">
+				<div className="w-1/2">
+					<h2 className="font-plush font-medium text-[56px] text-primary mb-6">
+						Möchten Sie mehr über <span className="italic">Vanturgo</span>{" "}
+						erfahren?
+					</h2>
+					<div className="font-medium text-black text-xl text-opacity-60">
+						Hochwertiger Kraftstoff und exzellenter Service – für einen
+						reibungslosen Betrieb Ihrer Fahrzeuge.
+					</div>
+				</div>
+				<div className="w-1/2 space-y-6">
+					<InputField label="Name" />
+					<InputField label="Firmenname" />
+					<div className="flex space-x-6 w-full">
+						<InputField label="E-mail" />
+						<InputField label="Telefonnummer (optional)" />
+					</div>
+					<InputField
+						label="Nachricht"
+						placeholder="Geben Sie Ihre Nachricht ein."
+						textarea={true}
+					/>
+					<PrimaryButton
+						titleElement={<p>Antwort Absenden</p>}
+						onclick={() => {}}
+					/>
+				</div>
+			</div>
+			<Footer />
 		</div>
 	);
 }

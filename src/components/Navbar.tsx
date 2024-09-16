@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 
 export default function Navbar() {
@@ -27,6 +28,6 @@ type navelement = {
 
 function NavElement(props: navelement){
     return (
-        <div className="mx-4">{props.name}</div>
+        <Link to={props.route} className="mx-4 hover:underline hover:font-medium" title={props.name}>{props.name}</Link>
     );
 }

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 type movingProps = {
 	text: string;
@@ -23,7 +23,7 @@ const marqueeRef = useRef<HTMLDivElement>(null);
 
     if (!marqueeElement) return;
 
-    const marqueeWidth = marqueeElement.scrollWidth;
+    // const marqueeWidth = marqueeElement.scrollWidth;
 
     // Animation logic
     const animate = () => {

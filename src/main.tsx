@@ -6,12 +6,22 @@ import {
   createHashRouter,
   RouterProvider,
 } from "react-router-dom";
+import Tankstelle from './Tankstelle.tsx';
+import Transporte from './Transporte.tsx';
 
 const router = createHashRouter([
   {
     path: "/",
     element: <Home />,
   },
+  {
+    path: '/tankstelle',
+    element: <Tankstelle />
+  },
+  {
+    path: '/Transporte',
+    element: <Transporte />
+  }
 ]);
 
 createRoot(document.getElementById('root')!).render(

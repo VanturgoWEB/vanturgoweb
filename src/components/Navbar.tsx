@@ -1,20 +1,31 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import logo from '../assets/logo.png'
 
 export default function Navbar() {
+    // const [selected, changeSelected] = useState('Home')
     const navObjs = [
-        {'name': 'Home', 'link': '/'},
-        {'name': 'B2B - Tankstelle', 'link': '/'},
-        {'name': 'Transporte & Umschlaglager', 'link': '/'},
-        {'name': 'Contact Us', 'link': '/'},
-        {'name': 'DE', 'link': '/'},
+        { 'name': 'Home', 'link': '/' },
+        { 'name': 'B2B - Tankstelle', 'link': '/tankstelle' },
+        { 'name': 'Transporte & Umschlaglager', 'link': '/Transporte' },
+        { 'name': 'Contact Us', 'link': '/Contact' },
+        { 'name': 'DE', 'link': '/DE' },
     ]
+    // useEffect(() => {
+        const location = useLocation()
+        console.log(location)
+        const selected = location.pathname
+    // }, [])
     return (
         <div className="w-full px-[4%] flex justify-between">
             <img src={logo} alt="" />
             <div className="flex my-6">
                 {navObjs.map(navObj => {
-                    return <NavElement name={navObj.name} route={navObj.link}/>
+                    return (
+                        selected == navObj.link ?
+                            <NavElement name={navObj.name} route={navObj.link} selected={true} />
+                            :
+                            <NavElement name={navObj.name} route={navObj.link} />
+                    )
                 })}
             </div>
         </div>
@@ -24,10 +35,11 @@ export default function Navbar() {
 type navelement = {
     name: string,
     route: string,
+    selected?: boolean | false,
 }
 
-function NavElement(props: navelement){
+function NavElement(props: navelement) {
     return (
-        <Link to={props.route} className="mx-4 hover:underline hover:font-medium" title={props.name}>{props.name}</Link>
+        <Link to={props.route} className={`mx-4 ${props.selected ? ' text-primary font-bold' : 'hover:underline'}`} title={props.name}>{props.name}</Link>
     );
 }

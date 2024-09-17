@@ -6,8 +6,15 @@ import PrimaryButton from "./components/PrimaryButton";
 import placeholder from "./assets/placeholder.svg";
 import Footer from "./components/Footer";
 import InputField from "./components/InputField";
+import card1 from './assets/card1.svg'
+import card2 from './assets/card2.svg'
+import card3 from './assets/card3.png'
+import card4 from './assets/card4.png'
+import card5 from './assets/card5.png'
+import { useRef } from "react";
 
 function Home() {
+	const formRef = useRef<null | HTMLElement>(null);
 	return (
 		<div className=" bg-bgwhite font-satoshi">
 			<Navbar />
@@ -30,7 +37,14 @@ function Home() {
 				</div>
 				<PrimaryButton
 					titleElement={<p>Jetzt Mehr Erfahren</p>}
-					onclick={() => {}}
+					onclick={() => {
+						setTimeout(function () {
+							formRef?.current?.scrollIntoView({
+								behavior: "smooth",
+								block: "start",
+							});
+					   }, 100);
+					}}
 				/>
 			</div>
 			<MovingText text="Ihre vertrauenswürdige Diesel-Tankstelle" />
@@ -42,34 +56,39 @@ function Home() {
 					anbietet.
 				</div>
 
-				<div className="flex mt-20 w-full space-x-10 mb-10">
+				<div className="flex mt-20 w-full h-auto space-x-10 mb-10">
 					<Card
 						title="B2B - Tankstelle"
 						description="Unsere Kerndienstleistung ist der Betrieb einer Diesel-Tankstelle für Firmenfahrzeuge aller Art. Unsere Zapfsäule befindet sich im Gewerbegebiet 01900 Großröhrsdorf und bietet rund um die Uhr Zugang zu günstigem."
 						className="w-1/2"
+						image={card1}
 					/>
 					<Card
 						title="Transporte & Umschlaglager"
 						description="Als kleine Schwester der VS Kühltransporte GmbH bieten wir unseren Firmenkunden zusätzlich die Möglichkeit, unser Umschlagslager zu nutzen oder unsere Transportdienstleistungen in Anspruch zu nehmen."
 						className="w-1/2"
+						image={card1}
 					/>
 				</div>
-				<div className="flex w-full space-x-10">
+				<div className="flex w-full space-x-10 ">
 					<Card
 						title="Alternative Investments"
 						description="Unsere Kerndienstleistung ist der Betrieb einer Diesel-Tankstelle für Firmenfahrzeuge aller Art. Unsere Zapfsäule befindet sich im Gewerbegebiet 01900 Großröhrsdorf und bietet rund um die Uhr Zugang zu günstigem."
-						className="w-1/3"
-					/>
+						className="w-1/3 h-[640px]"
+						image={card4}
+						/>
 					<Card
 						title="Coaching"
 						description="Als kleine Schwester der VS Kühltransporte GmbH bieten wir unseren Firmenkunden zusätzlich die Möglichkeit, unser Umschlagslager zu nutzen oder unsere Transportdienstleistungen in Anspruch zu nehmen."
 						className="w-1/3"
-					/>
+						image={card4}
+						/>
 					<Card
 						title="Unternehmensberatung"
 						description="Als kleine Schwester der VS Kühltransporte GmbH bieten wir unseren Firmenkunden zusätzlich die Möglichkeit, unser Umschlagslager zu nutzen oder unsere Transportdienstleistungen in Anspruch zu nehmen."
 						className="w-1/3"
-					/>
+						image={card5}
+						/>
 				</div>
 				<div className="pt-16">
 					<div className="px-40 pt-16 bg-[#E6ECF4] rounded-t-3xl flex flex-col items-center">

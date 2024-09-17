@@ -8,7 +8,9 @@ import Footer from "./components/Footer";
 import InputField from "./components/InputField";
 import card1 from './assets/card1.svg'
 import card4 from './assets/card4.png'
-import card5 from './assets/card5.png'
+import card3 from './assets/card3.png'
+import card6 from './assets/card6.png'
+import card7 from './assets/card7.png'
 import { useRef } from "react";
 
 function Home() {
@@ -16,37 +18,39 @@ function Home() {
 	return (
 		<div className=" bg-bgwhite font-satoshi">
 			<Navbar />
-			<div className="bg-[#E6ECF4] px-16 py-36">
-				<PrimaryButton
-					titleElement={<p>01900 Großröhrsdorf industrial area</p>}
-					onclick={() => {}}
-				/>
-				<div className="w-1/2 my-6">
-					<p className="text-primary text-7xl capitalize font-plush">
-						Herzlich willkommen bei
-						<span className="font-medium italic">Vanturgo GmbH</span>
-					</p>
-					<p className="text-black text-opacity-60 text-xl mt-8 pr-4 font-medium">
-						Eine moderne Lösung für die vielfältigen B2B-Bedürfnisse in
-						verschiedenen Branchen - mit dem Fokus auf eine effiziente und
-						kostengünstige Kraftstoffversorgung durch unsere rund um die Uhr
-						verfügbare Dieseltankstelle für Sie und Ihr Unternehmen.
-					</p>
+			<div className="bg-[#E6ECF4] px-12 py-12">
+				<div className="bg-white shadow-lg rounded-2xl p-16 w-3/5">
+					<PrimaryButton
+						titleElement={<p>01900 Großröhrsdorf industrial area</p>}
+						onclick={() => {}}
+					/>
+					<div className="w-full my-6">
+						<p className="text-primary text-7xl capitalize font-plush">
+							Herzlich willkommen bei
+							<span className="font-medium italic">Vanturgo GmbH</span>
+						</p>
+						<p className="text-black text-opacity-60 text-xl mt-8 pr-4 font-medium text-justify w-11/12">
+							Eine moderne Lösung für die vielfältigen B2B-Bedürfnisse in
+							verschiedenen Branchen - mit dem Fokus auf eine effiziente und
+							kostengünstige Kraftstoffversorgung durch unsere rund um die Uhr
+							verfügbare Dieseltankstelle für Sie und Ihr Unternehmen.
+						</p>
+					</div>
+					<PrimaryButton
+						titleElement={<p>Jetzt Mehr Erfahren</p>}
+						onclick={() => {
+							setTimeout(function () {
+								formRef?.current?.scrollIntoView({
+									behavior: "smooth",
+									block: "start",
+								});
+						}, 100);
+						}}
+					/>
 				</div>
-				<PrimaryButton
-					titleElement={<p>Jetzt Mehr Erfahren</p>}
-					onclick={() => {
-						setTimeout(function () {
-							formRef?.current?.scrollIntoView({
-								behavior: "smooth",
-								block: "start",
-							});
-					   }, 100);
-					}}
-				/>
-			</div>
+			</div>	
 			<MovingText text="Ihre vertrauenswürdige Diesel-Tankstelle" />
-			<div className="px-16 pt-24">
+			<div className="px-16 pt-20">
 				<Heading text={"Was wir Ihnen bieten."} />
 				<div className="w-1/2 font-medium text-black text-xl text-opacity-60">
 					Die VANTURGO GmbH ist ein modernes Unternehmen, das eine Vielzahl von
@@ -54,7 +58,7 @@ function Home() {
 					anbietet.
 				</div>
 
-				<div className="flex mt-20 w-full h-auto space-x-10 mb-10">
+				<div className="flex mt-12 w-full h-auto space-x-10 mb-12">
 					<Card
 						title="B2B - Tankstelle"
 						description="Unsere Kerndienstleistung ist der Betrieb einer Diesel-Tankstelle für Firmenfahrzeuge aller Art. Unsere Zapfsäule befindet sich im Gewerbegebiet 01900 Großröhrsdorf und bietet rund um die Uhr Zugang zu günstigem."
@@ -65,27 +69,27 @@ function Home() {
 						title="Transporte & Umschlaglager"
 						description="Als kleine Schwester der VS Kühltransporte GmbH bieten wir unseren Firmenkunden zusätzlich die Möglichkeit, unser Umschlagslager zu nutzen oder unsere Transportdienstleistungen in Anspruch zu nehmen."
 						className="w-1/2"
-						image={card1}
+						image={card6}
 					/>
 				</div>
-				<div className="flex w-full space-x-10 ">
+				<div className="flex w-full space-x-10">
 					<Card
 						title="Alternative Investments"
-						description="Unsere Kerndienstleistung ist der Betrieb einer Diesel-Tankstelle für Firmenfahrzeuge aller Art. Unsere Zapfsäule befindet sich im Gewerbegebiet 01900 Großröhrsdorf und bietet rund um die Uhr Zugang zu günstigem."
+						description="Investitionen in Immobilien im Ausland."
 						className="w-1/3 h-[640px]"
-						image={card4}
+						image={card7}
 						/>
 					<Card
 						title="Coaching"
-						description="Als kleine Schwester der VS Kühltransporte GmbH bieten wir unseren Firmenkunden zusätzlich die Möglichkeit, unser Umschlagslager zu nutzen oder unsere Transportdienstleistungen in Anspruch zu nehmen."
+						description="Unterstützung in verschiedenen Bereichen für Führungskräfte und Unternehmer."
 						className="w-1/3"
 						image={card4}
 						/>
 					<Card
 						title="Unternehmensberatung"
-						description="Als kleine Schwester der VS Kühltransporte GmbH bieten wir unseren Firmenkunden zusätzlich die Möglichkeit, unser Umschlagslager zu nutzen oder unsere Transportdienstleistungen in Anspruch zu nehmen."
+						description="Individuelle Beratung und Unterstützung für Ihr Unternehmen."
 						className="w-1/3"
-						image={card5}
+						image={card3}
 						/>
 				</div>
 				<div className="pt-16">

@@ -14,17 +14,17 @@ export default function Transporte() {
             <Navbar />
             <div className="bg-gradient-to-r from-black relative">
                 <img src={transport} alt="" className="absolute w-full h-full object-cover mix-blend-multiply" />
-                <div className="px-16 py-[292px] z-10 relative">
+                <div className="px-16 py-4 z-10 relative">
 
-                    <div className="w-1/3 my-10">
-                        <p className="text-white text-8xl capitalize font-plush">
-                            Unsere B2B Tankstelle
+                    <div className="w-2/3 my-10">
+                        <p className="text-white text-7xl capitalize font-plush">
+                            Transporte und Umschlaglager
                         </p>
                     </div>
                 </div>
             </div>
-            <div className="px-16 py-24">
-                <Heading text={"wir haben mehr zu bieten."} />
+            <div className="px-16 py-12">
+                <Heading text={"Wir haben mehr zu bieten."} />
                 <div className="w-1/2 font-medium text-black text-xl text-opacity-60">
                     Als Schwesterunternehmen der Stary GmbH bieten wir unseren Firmenkunden die Nutzung unseres Umschlagslagers und unserer Transportdienstleistungen an. Zudem unterstützen wir Sie mit alternativen Immobilieninvestitionen, Beratung für Führungskräfte und Unternehmer sowie strategischer Unternehmensberatung.
                 </div>

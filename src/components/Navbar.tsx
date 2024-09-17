@@ -16,8 +16,8 @@ export default function Navbar() {
         const selected = location.pathname
     // }, [])
     return (
-        <div className="w-full px-[4%] flex justify-between">
-            <img src={logo} alt="" />
+        <div className="w-full px-[4%] flex justify-between items-center">
+            <img src={logo} alt="" className="h-5 object-contain" />
             <div className="flex my-6">
                 {navObjs.map(navObj => {
                     return (

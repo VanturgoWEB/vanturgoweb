@@ -7,8 +7,6 @@ import placeholder from "./assets/placeholder.svg";
 import Footer from "./components/Footer";
 import InputField from "./components/InputField";
 import card1 from './assets/card1.svg'
-import card2 from './assets/card2.svg'
-import card3 from './assets/card3.png'
 import card4 from './assets/card4.png'
 import card5 from './assets/card5.png'
 import { useRef } from "react";
